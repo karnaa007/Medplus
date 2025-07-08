@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [com.medplusmart]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="medplusmartTest(failed)">
+    <classes>
+      <class name="com.medplusmart.MartTestNg">
+        <methods>
+          <include name="jnlp"/>
+          <include name="assetLogin"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.medplusmart.MartTestNg -->
+    </classes>
+  </test> <!-- medplusmartTest(failed) -->
+</suite> <!-- Failed suite [com.medplusmart] -->
