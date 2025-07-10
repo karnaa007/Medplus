@@ -19,8 +19,8 @@ public class BaseTest {
 		WebDriver driver = new ChromeDriver(options);
 		this.driver = driver;
 		driver.manage().window().maximize();
-	//	driver.get("https://wiki.medplusindia.com/");
-		driver.get("https://www.medplusmart.com/");
+		driver.get("https://wiki.medplusindia.com/");
+		//driver.get("https://www.medplusmart.com/");
 
 		try {
 			Thread.sleep(5000); // Wait for the page to load

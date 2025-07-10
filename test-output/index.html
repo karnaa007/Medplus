@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-test" class="navigator-link">
-              <span class="suite-name border-failed">test</span>
+              <span class="suite-name border-passed">test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-test" class="hide-methods failed suite-test"> (hide)</a> <!-- hide-methods failed suite-test -->
-                      <a href="#" panel-name="suite-test" class="show-methods failed suite-test"> (show)</a> <!-- show-methods failed suite-test -->
-                    </span>
-                    <div class="method-list-content failed suite-test">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-test -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -127,6 +113,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="searchAndAddProductTest">searchAndAddProductTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -142,45 +133,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-test" class="panel test">
-          <div class="suite-test-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">test.loacationAndLoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginTest">
-                  </a> <!-- loginTest -->
-                  <span class="method-name">loginTest</span>
-                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=135.0.7049.95)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.8.0-60-generic&apos;, java.version: &apos;11.0.27&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4fd2de2b8a2be708fac8d1703ebc46e5, clickElement {id=f.4B594702A758357179F7D3C454AB3711.d.B350CE5F9586FFFE2FB492F9CAB8E3A3.e.240}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.95, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38215}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38215/devtoo..., se:cdpVersion: 135.0.7049.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (4fd2de2b8a2be708fac8d1703ebc46e5)] -&gt; xpath: //span[@class=&apos;user-name&apos;]]
-Session ID: 4fd2de2b8a2be708fac8d1703ebc46e5
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at page.MartLocationandLoginPage.login(MartLocationandLoginPage.java:65)
-	at test.loacationAndLoginTest.loginTest(loacationAndLoginTest.java:29)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-test-class-failed -->
           <div class="suite-test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -199,6 +151,13 @@ Session ID: 4fd2de2b8a2be708fac8d1703ebc46e5
                   <a name="locationTest">
                   </a> <!-- locationTest -->
                   <span class="method-name">locationTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest">
+                  </a> <!-- loginTest -->
+                  <span class="method-name">loginTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -229,7 +188,7 @@ Session ID: 4fd2de2b8a2be708fac8d1703ebc46e5
           &lt;include name=&quot;loginTest&quot;/&gt;
           &lt;include name=&quot;fetchOTPFromDBTest&quot;/&gt;
           &lt;include name=&quot;searchAndAddProductTest&quot;/&gt;
-          &lt;include name=&quot;closeBrowserTest&quot;/&gt;
+          &lt;exclude name=&quot;closeBrowserTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- test.loacationAndLoginTest --&gt;
     &lt;/classes&gt;
@@ -275,24 +234,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'fetchOTPFromDBTest')
 data.setCell(0, 2, 'test.loacationAndLoginTest')
-data.setCell(0, 3, 16539);
+data.setCell(0, 3, 35896);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'locationTest')
+data.setCell(1, 1, 'searchAndAddProductTest')
 data.setCell(1, 2, 'test.loacationAndLoginTest')
-data.setCell(1, 3, 8733);
+data.setCell(1, 3, 26652);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'searchAndAddProductTest')
+data.setCell(2, 1, 'loginTest')
 data.setCell(2, 2, 'test.loacationAndLoginTest')
-data.setCell(2, 3, 8224);
+data.setCell(2, 3, 15564);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'loginTest')
+data.setCell(3, 1, 'locationTest')
 data.setCell(3, 2, 'test.loacationAndLoginTest')
-data.setCell(3, 3, 1770);
+data.setCell(3, 3, 7476);
 window.suiteTableData['test']= { tableData: data, tableDiv: 'times-div-test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 35 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-test">
               </div> <!-- times-div-test -->
             </div> <!-- times-div -->
@@ -325,25 +284,23 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">locationTest</span>
-                <span class="method-start">19589 ms</span>
+                <span class="method-start">7443 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">loginTest</span>
-                <span class="method-start">28354 ms</span>
+                <span class="method-start">14924 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">fetchOTPFromDBTest</span>
-                <span class="method-start">30138 ms</span>
+                <span class="method-start">30490 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">searchAndAddProductTest</span>
-                <span class="method-start">46683 ms</span>
+                <span class="method-start">66387 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowserTest</span>
-                <span class="method-start">54911 ms</span>
+                <span class="method-start">93040 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

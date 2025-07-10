@@ -26,7 +26,7 @@ public class loacationAndLoginTest extends MartLocationandLoginPage {
 	@Test
 	public void loginTest() throws InterruptedException {
 		System.out.println("\n login Test");
-		login();
+		martLogin("9951994998");
 		System.out.println("Login Test Completed");
 	}
 

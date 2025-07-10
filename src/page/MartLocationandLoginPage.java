@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.Duration;
+import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -14,7 +15,9 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -33,6 +36,7 @@ public class MartLocationandLoginPage extends BaseTest {
 	public WebElement locationInput;
 	WebElement locateMe = null;
 	WebDriverWait wait = null;
+
 	public void locatoin() throws InterruptedException {
 		System.out.println("Location Method");
 		// Implementation for selecting location
@@ -59,17 +63,37 @@ public class MartLocationandLoginPage extends BaseTest {
 
 	}
 
-	public void login() throws InterruptedException {
+	public void martLogin(String mobileNo) throws InterruptedException {
 		// Implementation for login using mobile number
 		System.out.println("Login Page Start");
-		driver.findElement(By.xpath("//span[@class='user-name']")).click();
+		driver.navigate().refresh();
 		Thread.sleep(5000);
-        driver.findElement(By.id("mobileNumber")).sendKeys("9424545495");
-        driver.findElement(By.xpath("//button[@class='btn btn-brand-gradient rounded-pill btn-block custom-btn-lg']")).click();
-        Thread.sleep(4000);
+		System.out.println("Login Page Refreshed");
+		loginLink = driver.findElement(By.xpath("//span[@class='user-name']"));
+		System.out.println("Login Link Found: " + loginLink.isDisplayed() + " and " + loginLink.isEnabled());
+		if (loginLink.isDisplayed() || loginLink.isEnabled()) {
+			System.out.println("Login Link is Displayed and Enabled");
+			loginLink.click();
+			System.out.println("Clicked on Login Link");
+			Thread.sleep(3000);
+			driver.findElement(By.id("mobileNumber")).sendKeys(mobileNo);
+			Thread.sleep(2000);
+			verifyOTP = driver.findElement(By.cssSelector(".btn-brand-gradient:nth-child(2)"));
+			verifyOTP.click();
+			System.out.println("Clicked on OTP");
+			Thread.sleep(5000);
+		} else {
+			System.out.println("Login Link is not available");
+			Assert.fail("Login Link is not available on the page");
+		}
+		/*
+		 * loginLink.click(); Thread.sleep(5000);
+		 * driver.findElement(By.id("mobileNumber")).sendKeys("mobileNo");
+		 * driver.findElement(By.
+		 * xpath("//button[@class='btn btn-brand-gradient rounded-pill btn-block custom-btn-lg']"
+		 * )).click(); Thread.sleep(4000);
+		 */
 	}
-
-	
 
 	// JDBC method to fetch OTP from MySQL
 	public String fetchOTPFromDB() {
@@ -83,24 +107,26 @@ public class MartLocationandLoginPage extends BaseTest {
 			Connection conn = DriverManager.getConnection(url, user, password);
 			Statement stmt = conn.createStatement();
 			String query = "select * from customers.tbl_customer_otp where MobileNo=9951994998 and Vertical='W' order by 1 desc limit 1";
-			System.out.println(stmt);
 			ResultSet rs = stmt.executeQuery(query);
-			System.out.println("Query Executed" + rs);
-
 			if (rs.next()) {
 				otp = rs.getString("otp");
-				System.out.println(otp);
-
-				WebElement otpInput = driver.findElement(By.xpath("//input[@name='OTP']"));
-				Thread.sleep(2000);
+				// Use explicit wait for OTP input
+				System.out.println("OTP fetched from DB: " + otp);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement otpInput = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='OTP']")));
 				otpInput.sendKeys(otp);
+				Thread.sleep(2000);
 				System.out.println("Clicked on Vrify OTP ");
 				Thread.sleep(8000);
-				userName = driver.findElement(By.xpath(
-						"//span[@class='username mr-2 text-white d-inline-flex align-items-center justify-content-center font-16']"))
+
+				// WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+				String userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+						"//span[@class='username mr-2 text-white d-inline-flex align-items-center justify-content-center font-16']")))
 						.getText();
+				// userName.getText();
 				try {
-					Assert.assertEquals(userName, "karna");
+					Assert.assertEquals(userName, "karna", "User name does not match");
 					System.out.println("loginLink Pass " + userName);
 				} catch (AssertionError e) {
 					System.out.println("loginLink Fail " + e.getMessage());
@@ -133,7 +159,7 @@ public class MartLocationandLoginPage extends BaseTest {
 				// Process each row
 				for (int i = 0; i < row.getLastCellNum(); i++) {
 					Cell cell = row.getCell(i);
-					System.out.println(" Data From Excel " + cell);
+					System.out.println("\n  Data From Excel Product Name is " + cell);
 					if (cell != null) {
 						productName = cell.toString();
 						System.out.println("Product Name is : " + cell.toString() + "\t");
@@ -154,10 +180,12 @@ public class MartLocationandLoginPage extends BaseTest {
 					try {
 						WebElement quantityOption = driver
 								.findElement(By.xpath("//a[@class='btn btn-sm px-0 text-brand ']"));
-						// System.out.println(" Quantity Option Available " +
-						// quantityOption.isDisplayed()+ "OR" + quantityOption.isEnabled());
-
-//					Assert.assertTrue(quantityOption.getSize()> 0), "Quantity Option is not Available");
+						List<WebElement> elements = driver.findElements((By) quantityOption);
+						Assert.assertTrue(elements.size() > 0, "Element should exist");
+						
+						
+						 System.out.println(" Quantity Option Available " +quantityOption.isDisplayed()+ "OR" + quantityOption.isEnabled());
+					    Assert.assertTrue(quantityOption.isDisplayed(), "Quantity Option is not Available");
 						quantityOption.click();
 						System.out.println("clicked on Add to cart button");
 
@@ -180,8 +208,7 @@ public class MartLocationandLoginPage extends BaseTest {
 		}
 
 	}
-	
-	
+
 	public void closeBrowser() {
 		if (driver != null) {
 			driver.quit();

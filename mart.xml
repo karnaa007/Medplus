@@ -10,7 +10,7 @@
             <include name="loginTest"/>
             <include name="fetchOTPFromDBTest"/>
             <include name="searchAndAddProductTest"/>
-            <include name="closeBrowserTest"/>
+            <exclude name="closeBrowserTest"/>
             </methods>
       </class>  
     </classes>
