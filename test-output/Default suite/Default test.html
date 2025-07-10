@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 10 11:27:24 IST 2025</td>
+<td>Started on:</td><td>Fri Jul 04 19:12:38 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>45 seconds (45896 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (89 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,32 +76,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.loacationAndLoginTest.loginTest()'><b>loginTest</b><br>Test class: test.loacationAndLoginTest</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=135.0.7049.95)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.8.0-60-generic&apos;, java.version: &apos;11.0.27&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [17431fb2ade7d0643bb79e26321ccbf6, clickElement {id=f.0ADBC6226574A1B5FE891A91752CF1EA.d.9295817905EC6624E7B03423C4FEF723.e.248}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.95, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44167}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44167/devtoo..., se:cdpVersion: 135.0.7049.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (17431fb2ade7d0643bb79e26321ccbf6)] -&gt; xpath: //span[@class=&apos;user-name&apos;]]
-Session ID: 17431fb2ade7d0643bb79e26321ccbf6
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at page.MartLocationandLoginPage.login(MartLocationandLoginPage.java:66)
-	at test.loacationAndLoginTest.loginTest(loacationAndLoginTest.java:28)
+<td title='test.loacationAndLoginTest.locatinoTest()'><b>locatinoTest</b><br>Test class: test.loacationAndLoginTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at page.MartLocationandLoginPage.LocationPage(MartLocationandLoginPage.java:37)
+	at test.loacationAndLoginTest.locatinoTest(loacationAndLoginTest.java:12)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,32 +108,10 @@ Session ID: 17431fb2ade7d0643bb79e26321ccbf6
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace600657906", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace600657906'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=135.0.7049.95)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.8.0-60-generic&apos;, java.version: &apos;11.0.27&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [17431fb2ade7d0643bb79e26321ccbf6, clickElement {id=f.0ADBC6226574A1B5FE891A91752CF1EA.d.9295817905EC6624E7B03423C4FEF723.e.248}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.95, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44167}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44167/devtoo..., se:cdpVersion: 135.0.7049.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (17431fb2ade7d0643bb79e26321ccbf6)] -&gt; xpath: //span[@class=&apos;user-name&apos;]]
-Session ID: 17431fb2ade7d0643bb79e26321ccbf6
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at page.MartLocationandLoginPage.login(MartLocationandLoginPage.java:66)
-	at test.loacationAndLoginTest.loginTest(loacationAndLoginTest.java:28)
+</pre></div><a href='#' onClick='toggleBox("stack-trace70323523", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace70323523'><pre>java.lang.NullPointerException
+	at page.MartLocationandLoginPage.LocationPage(MartLocationandLoginPage.java:37)
+	at test.loacationAndLoginTest.locatinoTest(loacationAndLoginTest.java:12)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -185,8 +141,8 @@ Session ID: 17431fb2ade7d0643bb79e26321ccbf6
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>2</td>
-<td>test.loacationAndLoginTest@2d2ffcb7</td></tr>
+<td>0</td>
+<td>test.loacationAndLoginTest@7770f470</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -197,20 +153,10 @@ Session ID: 17431fb2ade7d0643bb79e26321ccbf6
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.loacationAndLoginTest.searchAndAddProductTest()'><b>searchAndAddProductTest</b><br>Test class: test.loacationAndLoginTest</td>
+<td title='test.loacationAndLoginTest.loginTest()'><b>loginTest</b><br>Test class: test.loacationAndLoginTest</td>
 <td></td>
-<td>7</td>
-<td>test.loacationAndLoginTest@2d2ffcb7</td></tr>
-<tr>
-<td title='test.loacationAndLoginTest.locationTest()'><b>locationTest</b><br>Test class: test.loacationAndLoginTest</td>
-<td></td>
-<td>8</td>
-<td>test.loacationAndLoginTest@2d2ffcb7</td></tr>
-<tr>
-<td title='test.loacationAndLoginTest.fetchOTPFromDBTest()'><b>fetchOTPFromDBTest</b><br>Test class: test.loacationAndLoginTest</td>
-<td></td>
-<td>16</td>
-<td>test.loacationAndLoginTest@2d2ffcb7</td></tr>
+<td>0</td>
+<td>test.loacationAndLoginTest@7770f470</td></tr>
 </table><p>
 </body>
 </html>

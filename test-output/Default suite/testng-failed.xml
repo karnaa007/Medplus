@@ -5,8 +5,7 @@
     <classes>
       <class name="test.loacationAndLoginTest">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="loginTest"/>
+          <include name="locatinoTest"/>
         </methods>
       </class> <!-- test.loacationAndLoginTest -->
     </classes>
