@@ -1,18 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-04T19:12:38 IST" name="Default suite" finished-at="2025-07-04T19:12:38 IST" duration-ms="89">
+  <suite started-at="2025-07-10T12:29:29 IST" name="test" finished-at="2025-07-10T12:30:24 IST" duration-ms="55031">
     <groups>
     </groups>
-    <test started-at="2025-07-04T19:12:38 IST" name="Default test" finished-at="2025-07-04T19:12:38 IST" duration-ms="89">
+    <test started-at="2025-07-10T12:29:29 IST" name="test" finished-at="2025-07-10T12:30:24 IST" duration-ms="55031">
       <class name="test.loacationAndLoginTest">
-        <test-method signature="locatinoTest()[pri:0, instance:test.loacationAndLoginTest@7770f470]" started-at="2025-07-04T19:12:38 IST" name="locatinoTest" finished-at="2025-07-04T19:12:38 IST" duration-ms="14" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.loacationAndLoginTest@5f8edcc5]" started-at="2025-07-10T12:29:29 IST" name="launchBrowser" finished-at="2025-07-10T12:29:48 IST" duration-ms="19566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="locationTest()[pri:0, instance:test.loacationAndLoginTest@5f8edcc5]" started-at="2025-07-10T12:29:48 IST" name="locationTest" finished-at="2025-07-10T12:29:57 IST" duration-ms="8733" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- locationTest -->
+        <test-method signature="loginTest()[pri:0, instance:test.loacationAndLoginTest@5f8edcc5]" started-at="2025-07-10T12:29:57 IST" name="loginTest" finished-at="2025-07-10T12:29:59 IST" duration-ms="1770" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.95)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.19.1', revision: 'abe0ee07dc'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4fd2de2b8a2be708fac8d1703ebc46e5, clickElement {id=f.4B594702A758357179F7D3C454AB3711.d.B350CE5F9586FFFE2FB492F9CAB8E3A3.e.240}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.95, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38215}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38215/devtoo..., se:cdpVersion: 135.0.7049.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (4fd2de2b8a2be708fac8d1703ebc46e5)] -> xpath: //span[@class='user-name']]
+Session ID: 4fd2de2b8a2be708fac8d1703ebc46e5]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at page.MartLocationandLoginPage.LocationPage(MartLocationandLoginPage.java:37)
-at test.loacationAndLoginTest.locatinoTest(loacationAndLoginTest.java:12)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.95)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.19.1', revision: 'abe0ee07dc'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4fd2de2b8a2be708fac8d1703ebc46e5, clickElement {id=f.4B594702A758357179F7D3C454AB3711.d.B350CE5F9586FFFE2FB492F9CAB8E3A3.e.240}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.95, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38215}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38215/devtoo..., se:cdpVersion: 135.0.7049.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (4fd2de2b8a2be708fac8d1703ebc46e5)] -> xpath: //span[@class='user-name']]
+Session ID: 4fd2de2b8a2be708fac8d1703ebc46e5
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at page.MartLocationandLoginPage.login(MartLocationandLoginPage.java:65)
+at test.loacationAndLoginTest.loginTest(loacationAndLoginTest.java:29)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -43,15 +85,23 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- locatinoTest -->
-        <test-method signature="loginTest()[pri:0, instance:test.loacationAndLoginTest@7770f470]" started-at="2025-07-04T19:12:38 IST" name="loginTest" finished-at="2025-07-04T19:12:38 IST" duration-ms="1" status="PASS">
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
+        <test-method signature="fetchOTPFromDBTest()[pri:0, instance:test.loacationAndLoginTest@5f8edcc5]" started-at="2025-07-10T12:29:59 IST" name="fetchOTPFromDBTest" finished-at="2025-07-10T12:30:15 IST" duration-ms="16539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchOTPFromDBTest -->
+        <test-method signature="searchAndAddProductTest()[pri:0, instance:test.loacationAndLoginTest@5f8edcc5]" started-at="2025-07-10T12:30:15 IST" name="searchAndAddProductTest" finished-at="2025-07-10T12:30:24 IST" duration-ms="8224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAndAddProductTest -->
+        <test-method is-config="true" signature="closeBrowserTest()[pri:0, instance:test.loacationAndLoginTest@5f8edcc5]" started-at="2025-07-10T12:30:24 IST" name="closeBrowserTest" finished-at="2025-07-10T12:30:24 IST" duration-ms="43" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowserTest -->
       </class> <!-- test.loacationAndLoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- test -->
+  </suite> <!-- test -->
 </testng-results>

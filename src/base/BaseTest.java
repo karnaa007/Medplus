@@ -2,24 +2,31 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest {
-	public WebDriver driver;
-	
-void setup() {
+	public static WebDriver driver;
+
+	public void setup() {
 		// Setup code for initializing WebDriver, etc.
 		System.out.println("Setting up the test environment");
-		System.setProperty("webdriver.chrome.driver", "/home/karunakar/Documents/Selenium/chromedriver_linux64/chromedriver"); // Update with your path
-		driver = new ChromeDriver();
+		System.setProperty("webdriver.chromedriver",
+				"/home/karunakar/Documents/Selenium/chromedriver_linux64/chromedriver");
 		
-	}
+		ChromeOptions options = new ChromeOptions();
+		// Disable notifications
+		options.addArguments("--disable-notifications");
+		WebDriver driver = new ChromeDriver(options);
+		this.driver = driver;
+		driver.manage().window().maximize();
+	//	driver.get("https://wiki.medplusindia.com/");
+		driver.get("https://www.medplusmart.com/");
 
-	void teardown() {
-		// Cleanup code after tests
-		System.out.println("Tearing down the test environment");
+		try {
+			Thread.sleep(5000); // Wait for the page to load
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
-
-	void wait(int milliseconds) throws InterruptedException {
-		Thread.sleep(milliseconds);
-	}
+	
 }
