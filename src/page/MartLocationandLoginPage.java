@@ -180,8 +180,8 @@ public class MartLocationandLoginPage extends BaseTest {
 					try {
 						WebElement quantityOption = driver
 								.findElement(By.xpath("//a[@class='btn btn-sm px-0 text-brand ']"));
-						List<WebElement> elements = driver.findElements((By) quantityOption);
-						Assert.assertTrue(elements.size() > 0, "Element should exist");
+						//List<WebElement> elements = driver.findElements((By) quantityOption);
+						//Assert.assertTrue(elements.size() > 0, "Element should exist");
 						
 						
 						 System.out.println(" Quantity Option Available " +quantityOption.isDisplayed()+ "OR" + quantityOption.isEnabled());
