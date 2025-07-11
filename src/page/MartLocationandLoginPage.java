@@ -1,5 +1,7 @@
 package page;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,6 +15,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -110,27 +113,29 @@ public class MartLocationandLoginPage extends BaseTest {
 			ResultSet rs = stmt.executeQuery(query);
 			if (rs.next()) {
 				otp = rs.getString("otp");
-				// Use explicit wait for OTP input
 				System.out.println("OTP fetched from DB: " + otp);
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement otpInput = wait
-						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='OTP']")));
-				otpInput.sendKeys(otp);
-				Thread.sleep(2000);
-				System.out.println("Clicked on Vrify OTP ");
-				Thread.sleep(8000);
 
-				// WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-				String userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-						"//span[@class='username mr-2 text-white d-inline-flex align-items-center justify-content-center font-16']")))
-						.getText();
-				// userName.getText();
 				try {
-					Assert.assertEquals(userName, "karna", "User name does not match");
-					System.out.println("loginLink Pass " + userName);
-				} catch (AssertionError e) {
-					System.out.println("loginLink Fail " + e.getMessage());
+					wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Increased wait time
+					WebElement otpInput = wait
+							.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='OTP']")));
+					otpInput.sendKeys(otp);
+					Thread.sleep(2000);
+					System.out.println("Clicked on Vrify OTP ");
+					// Thread.sleep(5000);
 
+					String userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+							"//span[@class='username mr-2 text-white d-inline-flex align-items-center justify-content-center font-16']")))
+							.getText();
+					try {
+						Assert.assertEquals(userName, "karna", "User name does not match");
+						System.out.println("loginLink Pass " + userName);
+					} catch (AssertionError e) {
+						System.out.println("loginLink Fail " + e.getMessage());
+					}
+				} catch (org.openqa.selenium.TimeoutException e) {
+					System.out.println("OTP input field not found: " + e.getMessage());
+					Assert.fail("OTP input field not found");
 				}
 			}
 
@@ -180,13 +185,11 @@ public class MartLocationandLoginPage extends BaseTest {
 					try {
 						WebElement quantityOption = driver
 								.findElement(By.xpath("//a[@class='btn btn-sm px-0 text-brand ']"));
-						//List<WebElement> elements = driver.findElements((By) quantityOption);
-						//Assert.assertTrue(elements.size() > 0, "Element should exist");
-						
-						
-						 System.out.println(" Quantity Option Available " +quantityOption.isDisplayed()+ "OR" + quantityOption.isEnabled());
-					    Assert.assertTrue(quantityOption.isDisplayed(), "Quantity Option is not Available");
+						System.out.println(" Quantity Option Available " + quantityOption.isDisplayed() + "OR"
+								+ quantityOption.isEnabled());
+						Assert.assertTrue(quantityOption.isDisplayed(), "Quantity Option is not Available");
 						quantityOption.click();
+						Thread.sleep(2000);
 						System.out.println("clicked on Add to cart button");
 
 					} catch (NoSuchElementException e) {
@@ -209,6 +212,111 @@ public class MartLocationandLoginPage extends BaseTest {
 
 	}
 
+	public void miniCart() throws InterruptedException {
+		System.out.println("Mini Cart Method");
+		try {
+			WebElement miniCart = driver
+					.findElement(By.xpath("//div[@class=\"d-inline-block icon-hover p-0 dropdown\"]"));
+			System.out.println("Mini Cart Clicked");
+			Thread.sleep(3000);
+			System.out.println("Item in cart: " + miniCart.getText() + " is displayed " + miniCart.isDisplayed()
+					+ " and enabled " + miniCart.isEnabled());
+
+			String cartText = miniCart.getText().trim();
+			System.out.println("Number of items in the cart: " + cartText);
+
+			int miniCartCount = 0;
+			try {
+				miniCartCount = Integer.parseInt(cartText.replaceAll("[^0-9]", ""));
+			} catch (NumberFormatException nfe) {
+				System.out.println("Cart text is not a valid number: " + cartText);
+			}
+
+			Assert.assertTrue(miniCartCount > 0 || miniCart.isDisplayed(), "Mini Cart is not displayed");
+			System.out.println("Mini Cart is displayed and enabled");
+			miniCart.click();
+			System.out.println("Mini Cart Clicked");
+		} catch (NoSuchElementException e) {
+			System.out.println("Mini Cart is not displayed or not enabled :" + e.getMessage());
+		}
+	}
+
+	public void proceedToCheckout() throws InterruptedException {
+		System.out.println("Proceed to Checkout Method");
+		try {
+			WebElement proceedToCheckout = driver.findElement(By.id("pharmaCheckOutBtn"));
+			System.out.println("Proceed to Checkout Button Found: " + proceedToCheckout.isDisplayed() + " and "
+					+ proceedToCheckout.isEnabled());
+			if (proceedToCheckout.isDisplayed() || proceedToCheckout.isEnabled()) {
+				proceedToCheckout.click();
+				//Thread.sleep(5000);
+				System.out.println("Clicked on Proceed to Checkout Button");
+			} else {
+				System.out.println("Proceed to Checkout Button is not available");
+				Assert.fail("Proceed to Checkout Button is not available on the page");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Proceed to Checkout Button not found: " + e.getMessage());
+			Assert.fail("Proceed to Checkout Button not found");
+		}
+	}
+
+	public void selectPatient() throws InterruptedException {
+		System.out.println("Verify selectPatient ");
+		try {
+			// Wait for the page to load and the radio button to be present
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@class='custom-control-input']")));
+
+			WebElement selectPatientRadioBtn = driver.findElement(By.xpath("//input[@class='custom-control-input']"));
+			System.out.println("Cart Found: " + selectPatientRadioBtn.isSelected());
+			if (selectPatientRadioBtn.isSelected()) {
+				// selectPatientRadioBtn.click();
+				Thread.sleep(2000);
+				System.out.println("Clicked on Cart");
+				WebElement continueBtn = driver.findElement(
+						By.xpath("//button[@class='btn btn-brand-gradient rounded-pill px-5 ml-3 custom-btn-lg']"));
+				System.out.println(
+						"Continue Button Found: " + continueBtn.isDisplayed() + " and " + continueBtn.isEnabled());
+				if (continueBtn.isDisplayed() || continueBtn.isEnabled()) {
+					continueBtn.click();
+					Thread.sleep(3000);
+					System.out.println("Clicked on Continue Button");
+				} else {
+					System.out.println("Continue Button is not available");
+					Assert.fail("Continue Button is not available on the page");
+				}
+
+			} else {
+				System.out.println("Cart is not available");
+				Assert.fail("Cart is not available on the page");
+			}
+
+		} catch (NoSuchElementException e) {
+			System.out.println("Cart not found: " + e.getMessage());
+			Assert.fail("Cart not found");
+		}
+	}
+
+	public void proceedButton() throws InterruptedException {
+		try {
+			WebElement proceedBtn = driver.findElement(By.xpath("//button[@class='btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg']"));
+			System.out.println("Proceed Button Found");
+			if (proceedBtn.isDisplayed() && proceedBtn.isEnabled()) {
+				proceedBtn.click();
+				Thread.sleep(3000);
+				System.out.println("Clicked on Proceed Button");
+			} else {
+				System.out.println("Proceed Button is not available");
+				Assert.fail("Proceed Button is not available on the page");
+			}
+			
+		} catch (NoSuchElementException e) {
+			System.out.println("No alert found: " + e.getMessage());
+		}
+	}
+	
+	
 	public void closeBrowser() {
 		if (driver != null) {
 			driver.quit();

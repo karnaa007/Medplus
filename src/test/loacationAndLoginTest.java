@@ -1,9 +1,9 @@
 package test;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import page.MartLocationandLoginPage;
 
 public class loacationAndLoginTest extends MartLocationandLoginPage {
@@ -46,7 +46,34 @@ public class loacationAndLoginTest extends MartLocationandLoginPage {
 		System.out.println("searchAndAddProductTest Test Completed");
 	}
 	
-	@AfterClass
+	@Test
+	void miniCartTest() throws InterruptedException {
+		System.out.println("\n verify miniCart Test");
+		miniCart();
+		System.out.println("verify MiniCart Test Completed");
+	}
+	
+	@Test
+	void proceedToCheckoutTest() throws InterruptedException {
+		System.out.println("\n proceedToCheckout Test");
+		proceedToCheckout();
+		System.out.println("proceedToCheckout Test Completed");
+	}
+	
+	@Test
+	void selectPatientTest() throws InterruptedException {
+		System.out.println("\n selectPatient Test");
+		selectPatient();
+		System.out.println("selectPatient Test Completed");
+	}
+	@Test
+	void proceedButtonTest() throws InterruptedException {
+		System.out.println("\n proceedButton Test");
+		proceedButton();
+		System.out.println("proceedButton Test Completed");
+	}
+	
+	@Test
 	public void closeBrowserTest() {
 		System.out.println("\n closeBrowser Test");
 		closeBrowser();

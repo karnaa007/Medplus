@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-test" class="navigator-link">
-              <span class="suite-name border-passed">test</span>
+              <span class="suite-name border-failed">test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-test" class="hide-methods failed suite-test"> (hide)</a> <!-- hide-methods failed suite-test -->
+                      <a href="#" panel-name="suite-test" class="show-methods failed suite-test"> (show)</a> <!-- show-methods failed suite-test -->
+                    </span>
+                    <div class="method-list-content failed suite-test">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="fetchOTPFromDBTest">fetchOTPFromDBTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-test -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +117,7 @@
                     <div class="method-list-content passed suite-test">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="fetchOTPFromDBTest">fetchOTPFromDBTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="closeBrowserTest">closeBrowserTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -118,7 +132,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="searchAndAddProductTest">searchAndAddProductTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="miniCartTest">miniCartTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="proceedButtonTest">proceedButtonTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="proceedToCheckoutTest">proceedToCheckoutTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="selectPatientTest">selectPatientTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-test -->
@@ -133,9 +162,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-test" class="panel test">
-          <div class="suite-test-class-passed">
+          <div class="suite-test-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">test.loacationAndLoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -144,6 +173,27 @@
                   <a name="fetchOTPFromDBTest">
                   </a> <!-- fetchOTPFromDBTest -->
                   <span class="method-name">fetchOTPFromDBTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: OTP input field not found
+	at page.MartLocationandLoginPage.fetchOTPFromDB(MartLocationandLoginPage.java:138)
+	at test.loacationAndLoginTest.fetchOTPFromDBTest(loacationAndLoginTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-test-class-failed -->
+          <div class="suite-test-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.loacationAndLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="closeBrowserTest">
+                  </a> <!-- closeBrowserTest -->
+                  <span class="method-name">closeBrowserTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -162,9 +212,30 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="searchAndAddProductTest">
-                  </a> <!-- searchAndAddProductTest -->
-                  <span class="method-name">searchAndAddProductTest</span>
+                  <a name="miniCartTest">
+                  </a> <!-- miniCartTest -->
+                  <span class="method-name">miniCartTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="proceedButtonTest">
+                  </a> <!-- proceedButtonTest -->
+                  <span class="method-name">proceedButtonTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="proceedToCheckoutTest">
+                  </a> <!-- proceedToCheckoutTest -->
+                  <span class="method-name">proceedToCheckoutTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="selectPatientTest">
+                  </a> <!-- selectPatientTest -->
+                  <span class="method-name">selectPatientTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,8 +258,12 @@
           &lt;include name=&quot;locationTest&quot;/&gt;
           &lt;include name=&quot;loginTest&quot;/&gt;
           &lt;include name=&quot;fetchOTPFromDBTest&quot;/&gt;
-          &lt;include name=&quot;searchAndAddProductTest&quot;/&gt;
-          &lt;exclude name=&quot;closeBrowserTest&quot;/&gt;
+          &lt;include name=&quot;miniCartTest&quot;/&gt;
+          &lt;include name=&quot;proceedToCheckoutTest&quot;/&gt;
+          &lt;include name=&quot;selectPatientTest&quot;/&gt;
+          &lt;include name=&quot;proceedButtonTest&quot;/&gt;
+          &lt;include name=&quot;closeBrowserTest&quot;/&gt;
+          &lt;exclude name=&quot;searchAndAddProductTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- test.loacationAndLoginTest --&gt;
     &lt;/classes&gt;
@@ -230,23 +305,39 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'fetchOTPFromDBTest')
 data.setCell(0, 2, 'test.loacationAndLoginTest')
-data.setCell(0, 3, 35896);
+data.setCell(0, 3, 38308);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'searchAndAddProductTest')
+data.setCell(1, 1, 'loginTest')
 data.setCell(1, 2, 'test.loacationAndLoginTest')
-data.setCell(1, 3, 26652);
+data.setCell(1, 3, 15523);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginTest')
+data.setCell(2, 1, 'selectPatientTest')
 data.setCell(2, 2, 'test.loacationAndLoginTest')
-data.setCell(2, 3, 15564);
+data.setCell(2, 3, 8396);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'locationTest')
 data.setCell(3, 2, 'test.loacationAndLoginTest')
-data.setCell(3, 3, 7476);
+data.setCell(3, 3, 7499);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'miniCartTest')
+data.setCell(4, 2, 'test.loacationAndLoginTest')
+data.setCell(4, 3, 3157);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'proceedButtonTest')
+data.setCell(5, 2, 'test.loacationAndLoginTest')
+data.setCell(5, 3, 3108);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'proceedToCheckoutTest')
+data.setCell(6, 2, 'test.loacationAndLoginTest')
+data.setCell(6, 3, 181);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'closeBrowserTest')
+data.setCell(7, 2, 'test.loacationAndLoginTest')
+data.setCell(7, 3, 99);
 window.suiteTableData['test']= { tableData: data, tableDiv: 'times-div-test'}
 return data;
 }
@@ -266,9 +357,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-test" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">test.loacationAndLoginTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">searchAndAddProductTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-test" class="panel">
@@ -284,24 +382,38 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">locationTest</span>
-                <span class="method-start">7443 ms</span>
+                <span class="method-start">8036 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">14924 ms</span>
+                <span class="method-start">15539 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">fetchOTPFromDBTest</span>
-                <span class="method-start">30490 ms</span>
+                <span class="method-start">31063 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">searchAndAddProductTest</span>
-                <span class="method-start">66387 ms</span>
+                <span class="method-name">miniCartTest</span>
+                <span class="method-start">69375 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
+              <div class="test-method">
+                <span class="method-name">proceedToCheckoutTest</span>
+                <span class="method-start">72535 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">selectPatientTest</span>
+                <span class="method-start">72719 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">proceedButtonTest</span>
+                <span class="method-start">81116 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">closeBrowserTest</span>
-                <span class="method-start">93040 ms</span>
-              </div> <!-- configuration-class after -->
+                <span class="method-start">84229 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
