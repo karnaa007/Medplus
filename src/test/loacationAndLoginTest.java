@@ -66,12 +66,35 @@ public class loacationAndLoginTest extends MartLocationandLoginPage {
 		selectPatient();
 		System.out.println("selectPatient Test Completed");
 	}
+	
 	@Test
-	void proceedButtonTest() throws InterruptedException {
-		System.out.println("\n proceedButton Test");
-		proceedButton();
-		System.out.println("proceedButton Test Completed");
+	void prescriptionDetailsTest() throws InterruptedException {
+		System.out.println("\n prescriptionDetails Test");
+		prescriptionDetails();
+		System.out.println("prescriptionDetails Test Completed");
 	}
+	
+	@Test
+	void deliveryDetailsTest() throws InterruptedException {
+		System.out.println("\n deliveryDetails Test");
+		deliveryDetails();
+		System.out.println("deliveryDetails Test Completed");
+	}
+	
+	@Test
+	void promotionsAndReviewTest() throws InterruptedException {
+		System.out.println("\n promotionsAndReview Test");
+		promotionsAndReview();
+		System.out.println("promotionsAndReview Test Completed");
+	}
+	
+	@Test
+	void paymentDetailsTest() throws InterruptedException {
+		System.out.println("\n paymentDetails Test");
+		paymentDetails();
+		System.out.println("paymentDetails Test Completed");
+	}
+	
 	
 	@Test
 	public void closeBrowserTest() {

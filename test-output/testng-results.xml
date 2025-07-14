@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="9" passed="7" failed="1" skipped="0">
+<testng-results ignored="1" total="12" passed="10" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-11T20:26:03 IST" name="test" finished-at="2025-07-11T20:27:27 IST" duration-ms="84353">
+  <suite started-at="2025-07-14T18:21:53 IST" name="test" finished-at="2025-07-14T18:23:29 IST" duration-ms="95556">
     <groups>
     </groups>
-    <test started-at="2025-07-11T20:26:03 IST" name="test" finished-at="2025-07-11T20:27:27 IST" duration-ms="84353">
+    <test started-at="2025-07-14T18:21:53 IST" name="test" finished-at="2025-07-14T18:23:29 IST" duration-ms="95556">
       <class name="test.loacationAndLoginTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:26:03 IST" name="launchBrowser" finished-at="2025-07-11T20:26:11 IST" duration-ms="8029" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:21:53 IST" name="launchBrowser" finished-at="2025-07-14T18:22:02 IST" duration-ms="9479" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="locationTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:26:11 IST" name="locationTest" finished-at="2025-07-11T20:26:19 IST" duration-ms="7499" status="PASS">
+        <test-method signature="locationTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:22:02 IST" name="locationTest" finished-at="2025-07-14T18:22:10 IST" duration-ms="7346" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- locationTest -->
-        <test-method signature="loginTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:26:19 IST" name="loginTest" finished-at="2025-07-11T20:26:34 IST" duration-ms="15523" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:22:10 IST" name="loginTest" finished-at="2025-07-14T18:22:25 IST" duration-ms="15453" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="fetchOTPFromDBTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:26:34 IST" name="fetchOTPFromDBTest" finished-at="2025-07-11T20:27:12 IST" duration-ms="38308" status="FAIL">
+        <test-method signature="fetchOTPFromDBTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:22:25 IST" name="fetchOTPFromDBTest" finished-at="2025-07-14T18:23:09 IST" duration-ms="43846" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[OTP input field not found]]>
@@ -63,23 +63,35 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fetchOTPFromDBTest -->
-        <test-method signature="miniCartTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:27:12 IST" name="miniCartTest" finished-at="2025-07-11T20:27:16 IST" duration-ms="3157" status="PASS">
+        <test-method signature="miniCartTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:09 IST" name="miniCartTest" finished-at="2025-07-14T18:23:12 IST" duration-ms="3104" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- miniCartTest -->
-        <test-method signature="proceedToCheckoutTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:27:16 IST" name="proceedToCheckoutTest" finished-at="2025-07-11T20:27:16 IST" duration-ms="181" status="PASS">
+        <test-method signature="proceedToCheckoutTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:12 IST" name="proceedToCheckoutTest" finished-at="2025-07-14T18:23:12 IST" duration-ms="133" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- proceedToCheckoutTest -->
-        <test-method signature="selectPatientTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:27:16 IST" name="selectPatientTest" finished-at="2025-07-11T20:27:24 IST" duration-ms="8396" status="PASS">
+        <test-method signature="selectPatientTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:12 IST" name="selectPatientTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="15924" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectPatientTest -->
-        <test-method signature="proceedButtonTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:27:24 IST" name="proceedButtonTest" finished-at="2025-07-11T20:27:27 IST" duration-ms="3108" status="PASS">
+        <test-method signature="prescriptionDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="prescriptionDetailsTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- proceedButtonTest -->
-        <test-method signature="closeBrowserTest()[pri:0, instance:test.loacationAndLoginTest@7a675056]" started-at="2025-07-11T20:27:27 IST" name="closeBrowserTest" finished-at="2025-07-11T20:27:27 IST" duration-ms="99" status="PASS">
+        </test-method> <!-- prescriptionDetailsTest -->
+        <test-method signature="deliveryDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="deliveryDetailsTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deliveryDetailsTest -->
+        <test-method signature="promotionsAndReviewTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="promotionsAndReviewTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="94" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- promotionsAndReviewTest -->
+        <test-method signature="paymentDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="paymentDetailsTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paymentDetailsTest -->
+        <test-method signature="closeBrowserTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="closeBrowserTest" finished-at="2025-07-14T18:23:29 IST" duration-ms="89" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowserTest -->
