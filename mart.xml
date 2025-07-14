@@ -5,15 +5,18 @@
     <classes>
       <class name="test.loacationAndLoginTest">
           <methods>
-            <include name="launchBrowser"/>
-            <include name="locationTest"/>
-            <include name="loginTest"/>
-            <include name="fetchOTPFromDBTest"/>
-            <exclude name="searchAndAddProductTest"/>
-            <include name="miniCartTest"/>
-            <include name="proceedToCheckoutTest"/>
-            <include name="selectPatientTest"/>
-            <include name="proceedButtonTest"/>
+					<include name="launchBrowser" />
+					<include name="locationTest" />
+					<include name="loginTest" />
+					<include name="fetchOTPFromDBTest" />
+					<exclude name="searchAndAddProductTest" />
+					<include name="miniCartTest" />
+					<include name="proceedToCheckoutTest" />
+					<include name="selectPatientTest" />
+					<include name="prescriptionDetailsTest" />
+					<include name="deliveryDetailsTest" />
+					<include name="promotionsAndReviewTest" />
+					<include name="paymentDetailsTest" />
             <include name="closeBrowserTest"/>
             </methods>
       </class>  

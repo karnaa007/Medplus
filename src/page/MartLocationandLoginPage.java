@@ -114,7 +114,7 @@ public class MartLocationandLoginPage extends BaseTest {
 			if (rs.next()) {
 				otp = rs.getString("otp");
 				System.out.println("OTP fetched from DB: " + otp);
-
+				Thread.sleep(2000);
 				try {
 					wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Increased wait time
 					WebElement otpInput = wait
@@ -128,10 +128,10 @@ public class MartLocationandLoginPage extends BaseTest {
 							"//span[@class='username mr-2 text-white d-inline-flex align-items-center justify-content-center font-16']")))
 							.getText();
 					try {
-						Assert.assertEquals(userName, "karna", "User name does not match");
+						Assert.assertEquals(userName, "KB", "User name does not match");
 						System.out.println("loginLink Pass " + userName);
 					} catch (AssertionError e) {
-						System.out.println("loginLink Fail " + e.getMessage());
+						System.out.println("login Link Fail " + e.getMessage());
 					}
 				} catch (org.openqa.selenium.TimeoutException e) {
 					System.out.println("OTP input field not found: " + e.getMessage());
@@ -249,7 +249,7 @@ public class MartLocationandLoginPage extends BaseTest {
 					+ proceedToCheckout.isEnabled());
 			if (proceedToCheckout.isDisplayed() || proceedToCheckout.isEnabled()) {
 				proceedToCheckout.click();
-				//Thread.sleep(5000);
+				// Thread.sleep(5000);
 				System.out.println("Clicked on Proceed to Checkout Button");
 			} else {
 				System.out.println("Proceed to Checkout Button is not available");
@@ -282,6 +282,32 @@ public class MartLocationandLoginPage extends BaseTest {
 					continueBtn.click();
 					Thread.sleep(3000);
 					System.out.println("Clicked on Continue Button");
+
+					// Proceed to the next step
+					WebElement saveAndContinueBtn = driver.findElement(By
+							.xpath("//button[@class='btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg']"));
+					System.out.println("Selected patint and clicked on continue Button Found");
+					if (saveAndContinueBtn.isDisplayed() && saveAndContinueBtn.isEnabled()) {
+						saveAndContinueBtn.click();
+						Thread.sleep(3000);
+						System.out.println("Clicked on continue Button");
+						// proceed button action for next page
+						WebElement proceedBtn = driver.findElement(By.xpath(
+								"//button[@class=\"btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg\"]"));
+						System.out.println(
+								"Proceed Button Found: " + proceedBtn.isDisplayed() + " and " + proceedBtn.isEnabled());
+						if (proceedBtn.isDisplayed() || proceedBtn.isEnabled()) {
+							proceedBtn.click();
+							Thread.sleep(3000);
+							System.out.println("Clicked on Proceed Button");
+						} else {
+							System.out.println("Proceed Button is not available");
+							Assert.fail("Proceed Button is not available on the page");
+						}
+					} else {
+						System.out.println("Proceed Button is not available");
+						Assert.fail("Proceed Button is not available on the page");
+					}
 				} else {
 					System.out.println("Continue Button is not available");
 					Assert.fail("Continue Button is not available on the page");
@@ -298,25 +324,162 @@ public class MartLocationandLoginPage extends BaseTest {
 		}
 	}
 
-	public void proceedButton() throws InterruptedException {
+	/*
+	 * public void proceedButton() throws InterruptedException { try { WebElement
+	 * saveAndContinueBtn = driver.findElement( By.
+	 * xpath("//button[@class='btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg']"
+	 * ));
+	 * System.out.println("Selected patint and clicked on continue Button Found");
+	 * if (saveAndContinueBtn.isDisplayed() && saveAndContinueBtn.isEnabled()) {
+	 * saveAndContinueBtn.click(); Thread.sleep(3000);
+	 * System.out.println("Clicked on continue Button"); // proceed button action
+	 * for next page WebElement proceedBtn = driver.findElement(By.
+	 * xpath("//button[@class=\"btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg\"]"
+	 * )); System.out.println("Proceed Button Found: " + proceedBtn.isDisplayed() +
+	 * " and " + proceedBtn.isEnabled()); if (proceedBtn.isDisplayed() ||
+	 * proceedBtn.isEnabled()) { proceedBtn.click(); Thread.sleep(3000);
+	 * System.out.println("Clicked on Proceed Button"); } else {
+	 * System.out.println("Proceed Button is not available");
+	 * Assert.fail("Proceed Button is not available on the page"); } } else {
+	 * System.out.println("Proceed Button is not available");
+	 * Assert.fail("Proceed Button is not available on the page"); }
+	 * 
+	 * } catch (NoSuchElementException e) { System.out.println("No alert found: " +
+	 * e.getMessage()); } }
+	 */
+
+	public void prescriptionDetails() throws InterruptedException {
 		try {
-			WebElement proceedBtn = driver.findElement(By.xpath("//button[@class='btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg']"));
-			System.out.println("Proceed Button Found");
-			if (proceedBtn.isDisplayed() && proceedBtn.isEnabled()) {
-				proceedBtn.click();
-				Thread.sleep(3000);
-				System.out.println("Clicked on Proceed Button");
+			WebElement prescriptionDetails = driver.findElement(By.xpath("//div[contains(@class, 'store-pickup')]"));
+			System.out.println("Prescription Details Found: " + prescriptionDetails.isDisplayed() + " and "
+					+ prescriptionDetails.getText());
+			if (prescriptionDetails.isDisplayed()
+					|| prescriptionDetails.getText().contains("I'll show\n" + "Prescription at store")) {
+				System.out.println("Prescription Details is available");
+				// Click on the prescription details
+				// Assuming the prescription details are clickable
+				WebElement selectBtn = driver
+						.findElement(By.xpath("//button[@class='btn btn-brand-gradient px-4 rounded-pill']"));
+				System.out.println("Select Button Found: " + selectBtn.isDisplayed() + " and " + selectBtn.isEnabled());
+				if (selectBtn.isDisplayed() || selectBtn.isEnabled()) {
+					selectBtn.click();
+					Thread.sleep(3000);
+					System.out.println("Clicked on Select Button");
+
+					WebElement prescriptionDetailsProceedBtn = driver.findElement(By
+							.xpath("//button[@class='btn btn-brand-gradient px-5 ml-3 rounded-pill custom-btn-lg'] "));
+					System.out.println(
+							"Prescription Details Proceed Button Found: " + prescriptionDetailsProceedBtn.isDisplayed()
+									+ " and " + prescriptionDetailsProceedBtn.isEnabled());
+					if (prescriptionDetailsProceedBtn.isDisplayed() || prescriptionDetailsProceedBtn.isEnabled()) {
+						prescriptionDetailsProceedBtn.click();
+						Thread.sleep(3000);
+						System.out.println("Clicked on Prescription Details Proceed Button");
+					} else {
+						System.out.println("Prescription Details Proceed Button is not available");
+						Assert.fail("Prescription Details Proceed Button is not available on the page");
+					}
+
+				} else {
+					System.out.println("Select Button is not available");
+					Assert.fail("Select Button is not available on the page");
+				}
+				prescriptionDetails.click();
+				System.out.println("Clicked on Prescription Details");
 			} else {
-				System.out.println("Proceed Button is not available");
-				Assert.fail("Proceed Button is not available on the page");
+				System.out.println("Prescription Details is not available");
+				Assert.fail("Prescription Details is not available on the page");
 			}
-			
+
 		} catch (NoSuchElementException e) {
 			System.out.println("No alert found: " + e.getMessage());
 		}
 	}
-	
-	
+
+	public void deliveryDetails() throws InterruptedException {
+		try {
+			WebElement deliveryDetails = driver.findElement(
+					By.xpath("//address[contains(@class, 'address-outline') and contains(@class, 'active')]"));
+			System.out.println(
+					"Delivery Details Found: " + deliveryDetails.isDisplayed() + " and " + deliveryDetails.getText());
+			if (deliveryDetails.isDisplayed() || deliveryDetails.getText().contains("Home Delivery")) {
+				System.out.println("Delivery Details is available");
+				// Click on the delivery details
+				deliveryDetails.click();
+				System.out.println("Clicked on Delivery Details");
+				WebElement deliveryDetailsProceedBtn = driver.findElement(By.xpath(
+						"//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]"));
+				System.out.println("Delivery Details Proceed Button Found: " + deliveryDetailsProceedBtn.isDisplayed()
+						+ " and " + deliveryDetailsProceedBtn.isEnabled());
+				if (deliveryDetailsProceedBtn.isDisplayed() || deliveryDetailsProceedBtn.isEnabled()) {
+					deliveryDetailsProceedBtn.click();
+					Thread.sleep(3000);
+					System.out.println("Clicked on Delivery Details Proceed Button");
+				} else {
+					System.out.println("Delivery Details Proceed Button is not available");
+					Assert.fail("Delivery Details Proceed Button is not available on the page");
+				}
+			} else {
+				System.out.println("Delivery Details is not available");
+				Assert.fail("Delivery Details is not available on the page");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("No alert found: " + e.getMessage());
+		}
+	}
+
+	public void promotionsAndReview() throws InterruptedException {
+		try {
+			WebElement promotionsAndReviewProceedBtn = driver.findElement(
+					By.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]"));
+			System.out.println("Promotions and Review Found: " + promotionsAndReviewProceedBtn.isDisplayed() + " and "
+					+ promotionsAndReviewProceedBtn.getText());
+			if (promotionsAndReviewProceedBtn.isDisplayed()
+					|| promotionsAndReviewProceedBtn.getText().contains("Apply Promo Code")) {
+				System.out.println("Promotions and Review is available");
+				// Click on the promotions and review
+				promotionsAndReviewProceedBtn.click();
+				System.out.println("Clicked on Promotions and Review");
+			} else {
+				System.out.println("Promotions and Review is not available");
+				Assert.fail("Promotions and Review is not available on the page");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("No alert found: " + e.getMessage());
+		}
+	}
+
+	public void paymentDetails() throws InterruptedException {
+		System.out.println("Payment Details Method");
+		try {
+			WebElement paymentDetails = driver.findElement(By.xpath(
+					"//div[contains(@class, 'select-payment-container') and contains(@class, 'cash-on-delivery-select')]"));
+			System.out.println(
+					"Payment Details Found: " + paymentDetails.isDisplayed() + " and " + paymentDetails.getText());
+			if (paymentDetails.isDisplayed() || paymentDetails.getText().contains("Cash on Delivery")) {
+				paymentDetails.click();
+				System.out.println("Clicked on Payment Details");
+			} else {
+				System.out.println("Payment Details is not available");
+				Assert.fail("Payment Details is not available on the page");
+			}
+			WebElement placeTheOrderBtn = driver.findElement(
+					By.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'btn-block')]"));
+			System.out.println("Payment Details Proceed Button Found: " + placeTheOrderBtn.isDisplayed() + " and "
+					+ placeTheOrderBtn.isEnabled());
+			if (placeTheOrderBtn.isDisplayed() || placeTheOrderBtn.isEnabled()) {
+				// placeTheOrderBtn.click();
+				Thread.sleep(3000);
+				System.out.println("Clicked on Payment Details Proceed Button");
+			} else {
+				System.out.println("Payment Details Proceed Button is not available");
+				Assert.fail("Payment Details Proceed Button is not available on the page");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("No alert found: " + e.getMessage());
+		}
+	}
+
 	public void closeBrowser() {
 		if (driver != null) {
 			driver.quit();

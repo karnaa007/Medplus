@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                    <span class="method-stats">11 methods, 1 failed,   10 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -122,6 +122,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="deliveryDetailsTest">deliveryDetailsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="locationTest">locationTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -137,12 +142,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="proceedButtonTest">proceedButtonTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="paymentDetailsTest">paymentDetailsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="prescriptionDetailsTest">prescriptionDetailsTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="proceedToCheckoutTest">proceedToCheckoutTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="promotionsAndReviewTest">promotionsAndReviewTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -198,6 +213,13 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="deliveryDetailsTest">
+                  </a> <!-- deliveryDetailsTest -->
+                  <span class="method-name">deliveryDetailsTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="locationTest">
                   </a> <!-- locationTest -->
                   <span class="method-name">locationTest</span>
@@ -219,9 +241,16 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="proceedButtonTest">
-                  </a> <!-- proceedButtonTest -->
-                  <span class="method-name">proceedButtonTest</span>
+                  <a name="paymentDetailsTest">
+                  </a> <!-- paymentDetailsTest -->
+                  <span class="method-name">paymentDetailsTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="prescriptionDetailsTest">
+                  </a> <!-- prescriptionDetailsTest -->
+                  <span class="method-name">prescriptionDetailsTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -229,6 +258,13 @@
                   <a name="proceedToCheckoutTest">
                   </a> <!-- proceedToCheckoutTest -->
                   <span class="method-name">proceedToCheckoutTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="promotionsAndReviewTest">
+                  </a> <!-- promotionsAndReviewTest -->
+                  <span class="method-name">promotionsAndReviewTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -261,7 +297,10 @@
           &lt;include name=&quot;miniCartTest&quot;/&gt;
           &lt;include name=&quot;proceedToCheckoutTest&quot;/&gt;
           &lt;include name=&quot;selectPatientTest&quot;/&gt;
-          &lt;include name=&quot;proceedButtonTest&quot;/&gt;
+          &lt;include name=&quot;prescriptionDetailsTest&quot;/&gt;
+          &lt;include name=&quot;deliveryDetailsTest&quot;/&gt;
+          &lt;include name=&quot;promotionsAndReviewTest&quot;/&gt;
+          &lt;include name=&quot;paymentDetailsTest&quot;/&gt;
           &lt;include name=&quot;closeBrowserTest&quot;/&gt;
           &lt;exclude name=&quot;searchAndAddProductTest&quot;/&gt;
         &lt;/methods&gt;
@@ -305,39 +344,51 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(8);
+data.addRows(11);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'fetchOTPFromDBTest')
 data.setCell(0, 2, 'test.loacationAndLoginTest')
-data.setCell(0, 3, 38308);
+data.setCell(0, 3, 43846);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginTest')
+data.setCell(1, 1, 'selectPatientTest')
 data.setCell(1, 2, 'test.loacationAndLoginTest')
-data.setCell(1, 3, 15523);
+data.setCell(1, 3, 15924);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'selectPatientTest')
+data.setCell(2, 1, 'loginTest')
 data.setCell(2, 2, 'test.loacationAndLoginTest')
-data.setCell(2, 3, 8396);
+data.setCell(2, 3, 15453);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'locationTest')
 data.setCell(3, 2, 'test.loacationAndLoginTest')
-data.setCell(3, 3, 7499);
+data.setCell(3, 3, 7346);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'miniCartTest')
 data.setCell(4, 2, 'test.loacationAndLoginTest')
-data.setCell(4, 3, 3157);
+data.setCell(4, 3, 3104);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'proceedButtonTest')
+data.setCell(5, 1, 'proceedToCheckoutTest')
 data.setCell(5, 2, 'test.loacationAndLoginTest')
-data.setCell(5, 3, 3108);
+data.setCell(5, 3, 133);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'proceedToCheckoutTest')
+data.setCell(6, 1, 'promotionsAndReviewTest')
 data.setCell(6, 2, 'test.loacationAndLoginTest')
-data.setCell(6, 3, 181);
+data.setCell(6, 3, 94);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'closeBrowserTest')
 data.setCell(7, 2, 'test.loacationAndLoginTest')
-data.setCell(7, 3, 99);
+data.setCell(7, 3, 89);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'paymentDetailsTest')
+data.setCell(8, 2, 'test.loacationAndLoginTest')
+data.setCell(8, 3, 17);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'prescriptionDetailsTest')
+data.setCell(9, 2, 'test.loacationAndLoginTest')
+data.setCell(9, 3, 16);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'deliveryDetailsTest')
+data.setCell(10, 2, 'test.loacationAndLoginTest')
+data.setCell(10, 3, 15);
 window.suiteTableData['test']= { tableData: data, tableDiv: 'times-div-test'}
 return data;
 }
@@ -382,37 +433,49 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">locationTest</span>
-                <span class="method-start">8036 ms</span>
+                <span class="method-start">9484 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">15539 ms</span>
+                <span class="method-start">16833 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">fetchOTPFromDBTest</span>
-                <span class="method-start">31063 ms</span>
+                <span class="method-start">32287 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">miniCartTest</span>
-                <span class="method-start">69375 ms</span>
+                <span class="method-start">76136 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">proceedToCheckoutTest</span>
-                <span class="method-start">72535 ms</span>
+                <span class="method-start">79241 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">selectPatientTest</span>
-                <span class="method-start">72719 ms</span>
+                <span class="method-start">79375 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">proceedButtonTest</span>
-                <span class="method-start">81116 ms</span>
+                <span class="method-name">prescriptionDetailsTest</span>
+                <span class="method-start">95300 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">deliveryDetailsTest</span>
+                <span class="method-start">95317 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">promotionsAndReviewTest</span>
+                <span class="method-start">95333 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">paymentDetailsTest</span>
+                <span class="method-start">95428 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">closeBrowserTest</span>
-                <span class="method-start">84229 ms</span>
+                <span class="method-start">95446 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
