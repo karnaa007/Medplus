@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-test" class="navigator-link">
-              <span class="suite-name border-failed">test</span>
+              <span class="suite-name border-passed">test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">11 methods, 1 failed,   10 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-test" class="hide-methods failed suite-test"> (hide)</a> <!-- hide-methods failed suite-test -->
-                      <a href="#" panel-name="suite-test" class="show-methods failed suite-test"> (show)</a> <!-- show-methods failed suite-test -->
-                    </span>
-                    <div class="method-list-content failed suite-test">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="fetchOTPFromDBTest">fetchOTPFromDBTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-test -->
+                    <span class="method-stats">11 methods,   11 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -123,6 +109,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="deliveryDetailsTest">deliveryDetailsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-test" title="test.loacationAndLoginTest" class="method navigator-link" hash-for-method="fetchOTPFromDBTest">fetchOTPFromDBTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -177,27 +168,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-test" class="panel test">
-          <div class="suite-test-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">test.loacationAndLoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="fetchOTPFromDBTest">
-                  </a> <!-- fetchOTPFromDBTest -->
-                  <span class="method-name">fetchOTPFromDBTest</span>
-                  <div class="stack-trace">java.lang.AssertionError: OTP input field not found
-	at page.MartLocationandLoginPage.fetchOTPFromDB(MartLocationandLoginPage.java:138)
-	at test.loacationAndLoginTest.fetchOTPFromDBTest(loacationAndLoginTest.java:37)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 28 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-test-class-failed -->
           <div class="suite-test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -216,6 +186,13 @@
                   <a name="deliveryDetailsTest">
                   </a> <!-- deliveryDetailsTest -->
                   <span class="method-name">deliveryDetailsTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fetchOTPFromDBTest">
+                  </a> <!-- fetchOTPFromDBTest -->
+                  <span class="method-name">fetchOTPFromDBTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -346,49 +323,49 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(11);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'fetchOTPFromDBTest')
+data.setCell(0, 1, 'loginTest')
 data.setCell(0, 2, 'test.loacationAndLoginTest')
-data.setCell(0, 3, 43846);
+data.setCell(0, 3, 16013);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'selectPatientTest')
+data.setCell(1, 1, 'fetchOTPFromDBTest')
 data.setCell(1, 2, 'test.loacationAndLoginTest')
-data.setCell(1, 3, 15924);
+data.setCell(1, 3, 11879);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginTest')
+data.setCell(2, 1, 'locationTest')
 data.setCell(2, 2, 'test.loacationAndLoginTest')
-data.setCell(2, 3, 15453);
+data.setCell(2, 3, 7380);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'locationTest')
+data.setCell(3, 1, 'prescriptionDetailsTest')
 data.setCell(3, 2, 'test.loacationAndLoginTest')
-data.setCell(3, 3, 7346);
+data.setCell(3, 3, 6218);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'miniCartTest')
+data.setCell(4, 1, 'selectPatientTest')
 data.setCell(4, 2, 'test.loacationAndLoginTest')
-data.setCell(4, 3, 3104);
+data.setCell(4, 3, 5690);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'proceedToCheckoutTest')
 data.setCell(5, 2, 'test.loacationAndLoginTest')
-data.setCell(5, 3, 133);
+data.setCell(5, 3, 5147);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'promotionsAndReviewTest')
+data.setCell(6, 1, 'miniCartTest')
 data.setCell(6, 2, 'test.loacationAndLoginTest')
-data.setCell(6, 3, 94);
+data.setCell(6, 3, 4702);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'closeBrowserTest')
+data.setCell(7, 1, 'paymentDetailsTest')
 data.setCell(7, 2, 'test.loacationAndLoginTest')
-data.setCell(7, 3, 89);
+data.setCell(7, 3, 4156);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'paymentDetailsTest')
+data.setCell(8, 1, 'deliveryDetailsTest')
 data.setCell(8, 2, 'test.loacationAndLoginTest')
-data.setCell(8, 3, 17);
+data.setCell(8, 3, 3189);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'prescriptionDetailsTest')
+data.setCell(9, 1, 'promotionsAndReviewTest')
 data.setCell(9, 2, 'test.loacationAndLoginTest')
-data.setCell(9, 3, 16);
+data.setCell(9, 3, 97);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'deliveryDetailsTest')
+data.setCell(10, 1, 'closeBrowserTest')
 data.setCell(10, 2, 'test.loacationAndLoginTest')
-data.setCell(10, 3, 15);
+data.setCell(10, 3, 84);
 window.suiteTableData['test']= { tableData: data, tableDiv: 'times-div-test'}
 return data;
 }
@@ -433,49 +410,47 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">locationTest</span>
-                <span class="method-start">9484 ms</span>
+                <span class="method-start">7040 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">16833 ms</span>
+                <span class="method-start">14423 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">fetchOTPFromDBTest</span>
-                <span class="method-start">32287 ms</span>
+                <span class="method-start">30438 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">miniCartTest</span>
-                <span class="method-start">76136 ms</span>
+                <span class="method-start">42319 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">proceedToCheckoutTest</span>
-                <span class="method-start">79241 ms</span>
+                <span class="method-start">47023 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">selectPatientTest</span>
-                <span class="method-start">79375 ms</span>
+                <span class="method-start">52172 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">prescriptionDetailsTest</span>
-                <span class="method-start">95300 ms</span>
+                <span class="method-start">57863 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deliveryDetailsTest</span>
-                <span class="method-start">95317 ms</span>
+                <span class="method-start">64083 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">promotionsAndReviewTest</span>
-                <span class="method-start">95333 ms</span>
+                <span class="method-start">67273 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">paymentDetailsTest</span>
-                <span class="method-start">95428 ms</span>
+                <span class="method-start">67371 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">closeBrowserTest</span>
-                <span class="method-start">95446 ms</span>
+                <span class="method-start">71528 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

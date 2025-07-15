@@ -1,97 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="12" passed="10" failed="1" skipped="0">
+<testng-results ignored="1" total="12" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-14T18:21:53 IST" name="test" finished-at="2025-07-14T18:23:29 IST" duration-ms="95556">
+  <suite started-at="2025-07-15T16:26:27 IST" name="test" finished-at="2025-07-15T16:27:39 IST" duration-ms="71635">
     <groups>
     </groups>
-    <test started-at="2025-07-14T18:21:53 IST" name="test" finished-at="2025-07-14T18:23:29 IST" duration-ms="95556">
+    <test started-at="2025-07-15T16:26:27 IST" name="test" finished-at="2025-07-15T16:27:39 IST" duration-ms="71635">
       <class name="test.loacationAndLoginTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:21:53 IST" name="launchBrowser" finished-at="2025-07-14T18:22:02 IST" duration-ms="9479" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:26:27 IST" name="launchBrowser" finished-at="2025-07-15T16:26:34 IST" duration-ms="7034" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="locationTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:22:02 IST" name="locationTest" finished-at="2025-07-14T18:22:10 IST" duration-ms="7346" status="PASS">
+        <test-method signature="locationTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:26:34 IST" name="locationTest" finished-at="2025-07-15T16:26:41 IST" duration-ms="7380" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- locationTest -->
-        <test-method signature="loginTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:22:10 IST" name="loginTest" finished-at="2025-07-14T18:22:25 IST" duration-ms="15453" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:26:41 IST" name="loginTest" finished-at="2025-07-15T16:26:57 IST" duration-ms="16013" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="fetchOTPFromDBTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:22:25 IST" name="fetchOTPFromDBTest" finished-at="2025-07-14T18:23:09 IST" duration-ms="43846" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[OTP input field not found]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: OTP input field not found
-at org.testng.Assert.fail(Assert.java:111)
-at page.MartLocationandLoginPage.fetchOTPFromDB(MartLocationandLoginPage.java:138)
-at test.loacationAndLoginTest.fetchOTPFromDBTest(loacationAndLoginTest.java:37)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="fetchOTPFromDBTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:26:57 IST" name="fetchOTPFromDBTest" finished-at="2025-07-15T16:27:09 IST" duration-ms="11879" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fetchOTPFromDBTest -->
-        <test-method signature="miniCartTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:09 IST" name="miniCartTest" finished-at="2025-07-14T18:23:12 IST" duration-ms="3104" status="PASS">
+        <test-method signature="miniCartTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:09 IST" name="miniCartTest" finished-at="2025-07-15T16:27:14 IST" duration-ms="4702" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- miniCartTest -->
-        <test-method signature="proceedToCheckoutTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:12 IST" name="proceedToCheckoutTest" finished-at="2025-07-14T18:23:12 IST" duration-ms="133" status="PASS">
+        <test-method signature="proceedToCheckoutTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:14 IST" name="proceedToCheckoutTest" finished-at="2025-07-15T16:27:19 IST" duration-ms="5147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- proceedToCheckoutTest -->
-        <test-method signature="selectPatientTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:12 IST" name="selectPatientTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="15924" status="PASS">
+        <test-method signature="selectPatientTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:19 IST" name="selectPatientTest" finished-at="2025-07-15T16:27:25 IST" duration-ms="5690" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectPatientTest -->
-        <test-method signature="prescriptionDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="prescriptionDetailsTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="16" status="PASS">
+        <test-method signature="prescriptionDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:25 IST" name="prescriptionDetailsTest" finished-at="2025-07-15T16:27:31 IST" duration-ms="6218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prescriptionDetailsTest -->
-        <test-method signature="deliveryDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="deliveryDetailsTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="15" status="PASS">
+        <test-method signature="deliveryDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:31 IST" name="deliveryDetailsTest" finished-at="2025-07-15T16:27:34 IST" duration-ms="3189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deliveryDetailsTest -->
-        <test-method signature="promotionsAndReviewTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="promotionsAndReviewTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="94" status="PASS">
+        <test-method signature="promotionsAndReviewTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:34 IST" name="promotionsAndReviewTest" finished-at="2025-07-15T16:27:34 IST" duration-ms="97" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- promotionsAndReviewTest -->
-        <test-method signature="paymentDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="paymentDetailsTest" finished-at="2025-07-14T18:23:28 IST" duration-ms="17" status="PASS">
+        <test-method signature="paymentDetailsTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:34 IST" name="paymentDetailsTest" finished-at="2025-07-15T16:27:38 IST" duration-ms="4156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- paymentDetailsTest -->
-        <test-method signature="closeBrowserTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-14T18:23:28 IST" name="closeBrowserTest" finished-at="2025-07-14T18:23:29 IST" duration-ms="89" status="PASS">
+        <test-method signature="closeBrowserTest()[pri:0, instance:test.loacationAndLoginTest@2898ac89]" started-at="2025-07-15T16:27:38 IST" name="closeBrowserTest" finished-at="2025-07-15T16:27:39 IST" duration-ms="84" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowserTest -->
