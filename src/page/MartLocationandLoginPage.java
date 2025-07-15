@@ -20,6 +20,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -217,8 +218,8 @@ public class MartLocationandLoginPage extends BaseTest {
 		try {
 			// Wait for the mini cart to be present
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.presenceOfElementLocated(
-					By.xpath("//div[@class='d-inline-block icon-hover p-0 dropdown']")));
+			wait.until(ExpectedConditions
+					.presenceOfElementLocated(By.xpath("//div[@class='d-inline-block icon-hover p-0 dropdown']")));
 			WebElement miniCart = driver
 					.findElement(By.xpath("//div[@class=\"d-inline-block icon-hover p-0 dropdown\"]"));
 			System.out.println("Mini Cart Clicked");
@@ -253,7 +254,7 @@ public class MartLocationandLoginPage extends BaseTest {
 					+ proceedToCheckout.isEnabled());
 			if (proceedToCheckout.isDisplayed() || proceedToCheckout.isEnabled()) {
 				proceedToCheckout.click();
-				// Thread.sleep(5000);
+				Thread.sleep(5000);
 				System.out.println("Clicked on Proceed to Checkout Button");
 			} else {
 				System.out.println("Proceed to Checkout Button is not available");
@@ -268,83 +269,62 @@ public class MartLocationandLoginPage extends BaseTest {
 	public void selectPatient() throws InterruptedException {
 		System.out.println("Verify selectPatient ");
 		try {
-			// Wait for the page to load and the radio button to be present
+
+			// Wait for the select patient radio button to be present
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@class='custom-control-input']")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label/div/h6/p")));
+			WebElement selectPatientRadioBtn = driver.findElement(By.xpath("//label/div/h6/p"));
+			System.out.println("selectPatientRadioBtn Found: " + selectPatientRadioBtn.isSelected() + " and "
+					+ selectPatientRadioBtn.isEnabled());
+			if (selectPatientRadioBtn.isSelected() || selectPatientRadioBtn.isEnabled()) {
 
-			WebElement selectPatientRadioBtn = driver.findElement(By.xpath("//input[@class='custom-control-input']"));
-			System.out.println("selectPatientRadioBtn Found: " + selectPatientRadioBtn.isSelected());
-			if (selectPatientRadioBtn.isSelected()) {
-				// selectPatientRadioBtn.click();
-				System.out.println("selectPatientRadioBtn is already selected");
-				//wait for the continue button to be present
-				wait.until(ExpectedConditions.presenceOfElementLocated(
-						By.xpath("//button[@class='btn btn-brand-gradient rounded-pill px-5 ml-3 custom-btn-lg']")));
-				System.out.println("Clicked on selectPatientRadioBtn");
-				WebElement continueBtn = driver.findElement(
+				Actions action = new Actions(driver);
+				action.moveToElement(driver.findElement(By.xpath("//label/div/h6/p"))).click().perform();
+				System.out.println("select PatientRadioBtn is already selected");
+				Thread.sleep(2000);
+				WebElement saveAndContinueBtn = driver.findElement(
 						By.xpath("//button[@class='btn btn-brand-gradient rounded-pill px-5 ml-3 custom-btn-lg']"));
-				System.out.println(
-						"Continue Button Found: " + continueBtn.isDisplayed() + " and " + continueBtn.isEnabled());
-				if (continueBtn.isDisplayed() || continueBtn.isEnabled()) {
-					continueBtn.click();
-					Thread.sleep(3000);
-					System.out.println("Clicked on Continue Button");
-
-					// Proceed to the next step
-					//wait for the save and continue button to be present
-					wait.until(ExpectedConditions.presenceOfElementLocated(
-							By.xpath("//button[@class='btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg']")));
-					WebElement saveAndContinueBtn = driver.findElement(By
-							.xpath("//button[@class='btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg']"));
-					System.out.println("Selected patint and clicked on continue Button Found");
-					if (saveAndContinueBtn.isDisplayed() && saveAndContinueBtn.isEnabled()) {
-						saveAndContinueBtn.click();
+				if (saveAndContinueBtn.isDisplayed() && saveAndContinueBtn.isEnabled()) {
+					saveAndContinueBtn.click();
+					System.out.println("Clicked on continue Button");
+					// wait for the proceed button to be present
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+							"//button[@class=\"btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg\"]")));
+					WebElement proceedBtn = driver.findElement(By.xpath(
+							"//button[@class=\"btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg\"]"));
+					System.out.println(
+							"Proceed Button Found: " + proceedBtn.isDisplayed() + " and " + proceedBtn.isEnabled());
+					if (proceedBtn.isDisplayed() || proceedBtn.isEnabled()) {
+						proceedBtn.click();
 						Thread.sleep(3000);
-						System.out.println("Clicked on continue Button");
-						// proceed button action for next page
-						// wait for the proceed button to be present
-						wait.until(ExpectedConditions.presenceOfElementLocated(
-								By.xpath("//button[@class=\"btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg\"]")));
-						WebElement proceedBtn = driver.findElement(By.xpath(
-								"//button[@class=\"btn  btn-brand-gradient ml-3 px-5 rounded-pill custom-btn-lg\"]"));
-						System.out.println(
-								"Proceed Button Found: " + proceedBtn.isDisplayed() + " and " + proceedBtn.isEnabled());
-						if (proceedBtn.isDisplayed() || proceedBtn.isEnabled()) {
-							proceedBtn.click();
-							Thread.sleep(3000);
-							System.out.println("Clicked on Proceed Button");
-						} else {
-							System.out.println("Proceed Button is not available");
-							Assert.fail("Proceed Button is not available on the page");
-						}
+						System.out.println("Clicked on Proceed Button");
 					} else {
 						System.out.println("Proceed Button is not available");
 						Assert.fail("Proceed Button is not available on the page");
 					}
 				} else {
-					System.out.println("Continue Button is not available");
-					Assert.fail("Continue Button is not available on the page");
+					System.out.println("Proceed Button is not available");
+					Assert.fail("Proceed Button is not available on the page");
 				}
 
 			} else {
 				System.out.println("selectPatientRadioBtn is not available");
-				Assert.fail("Cart is not available on the page");
+				Assert.fail("selectPatientRadioBtn is not available on the page");
 			}
 
 		} catch (NoSuchElementException e) {
 			System.out.println("Cart not found: " + e.getMessage());
-			Assert.fail("Cart not found");
+			Assert.fail("selectPatientRadioBtn not found");
 		}
 	}
-
-
 
 	public void prescriptionDetails() throws InterruptedException {
 		try {
 			System.out.println("Prescription Details Method");
 			// Wait for the prescription details to be present
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@class, 'store-pickup')]")));
+			wait.until(
+					ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@class, 'store-pickup')]")));
 			WebElement prescriptionDetails = driver.findElement(By.xpath("//div[contains(@class, 'store-pickup')]"));
 			System.out.println("Prescription Details Found: " + prescriptionDetails.isDisplayed() + " and "
 					+ prescriptionDetails.getText());
@@ -363,9 +343,9 @@ public class MartLocationandLoginPage extends BaseTest {
 					selectBtn.click();
 					Thread.sleep(3000);
 					System.out.println("Clicked on Select Button");
-					//wait for the prescription details proceed button to be present
-					wait.until(ExpectedConditions.presenceOfElementLocated(
-							By.xpath("//button[@class='btn btn-brand-gradient px-5 ml-3 rounded-pill custom-btn-lg']")));
+					// wait for the prescription details proceed button to be present
+					wait.until(ExpectedConditions.presenceOfElementLocated(By
+							.xpath("//button[@class='btn btn-brand-gradient px-5 ml-3 rounded-pill custom-btn-lg']")));
 					WebElement prescriptionDetailsProceedBtn = driver.findElement(By
 							.xpath("//button[@class='btn btn-brand-gradient px-5 ml-3 rounded-pill custom-btn-lg'] "));
 					System.out.println(
@@ -384,8 +364,7 @@ public class MartLocationandLoginPage extends BaseTest {
 					System.out.println("Select Button is not available");
 					Assert.fail("Select Button is not available on the page");
 				}
-				prescriptionDetails.click();
-				System.out.println("Clicked on Prescription Details");
+
 			} else {
 				System.out.println("Prescription Details is not available");
 				Assert.fail("Prescription Details is not available on the page");
@@ -401,10 +380,8 @@ public class MartLocationandLoginPage extends BaseTest {
 			System.out.println("Delivery Details Method");
 			// Wait for the delivery details to be present
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.presenceOfElementLocated(
-					By.cssSelector(".address-outline:nth-child(1)")));
-			WebElement deliveryDetails = driver.findElement(
-					By.cssSelector(".address-outline:nth-child(1)"));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".address-outline:nth-child(1)")));
+			WebElement deliveryDetails = driver.findElement(By.cssSelector(".address-outline:nth-child(1)"));
 			System.out.println(
 					"Delivery Details Found: " + deliveryDetails.isDisplayed() + " and " + deliveryDetails.getText());
 			if (deliveryDetails.isDisplayed() || deliveryDetails.getText().contains("Home Delivery")) {
@@ -413,8 +390,8 @@ public class MartLocationandLoginPage extends BaseTest {
 				deliveryDetails.click();
 				System.out.println("Clicked on Delivery Details");
 				// Wait for the delivery details proceed button to be present
-				wait.until(ExpectedConditions.presenceOfElementLocated(
-						By.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]")));
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+						"//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]")));
 				WebElement deliveryDetailsProceedBtn = driver.findElement(By.xpath(
 						"//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]"));
 				System.out.println("Delivery Details Proceed Button Found: " + deliveryDetailsProceedBtn.isDisplayed()
@@ -441,11 +418,11 @@ public class MartLocationandLoginPage extends BaseTest {
 			System.out.println("Promotions and Review Method");
 			// Wait for the promotions and review to be present
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.presenceOfElementLocated(
-					By.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]")));
-			//wait for the promotions and review button to be present
-			wait.until(ExpectedConditions.presenceOfElementLocated(
-					By.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By
+					.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]")));
+			// wait for the promotions and review button to be present
+			wait.until(ExpectedConditions.presenceOfElementLocated(By
+					.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]")));
 			WebElement promotionsAndReviewProceedBtn = driver.findElement(
 					By.xpath("//button[contains(@class, 'btn-brand-gradient') and contains(@class, 'custom-btn-lg')]"));
 			System.out.println("Promotions and Review Found: " + promotionsAndReviewProceedBtn.isDisplayed() + " and "
@@ -470,8 +447,8 @@ public class MartLocationandLoginPage extends BaseTest {
 		try {
 			// Wait for the payment details to be present
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.presenceOfElementLocated(
-					By.xpath("//div[contains(@class, 'select-payment-container') and contains(@class, 'cash-on-delivery-select')]")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+					"//div[contains(@class, 'select-payment-container') and contains(@class, 'cash-on-delivery-select')]")));
 			WebElement paymentDetails = driver.findElement(By.xpath(
 					"//div[contains(@class, 'select-payment-container') and contains(@class, 'cash-on-delivery-select')]"));
 			System.out.println(

@@ -5,8 +5,8 @@
     <classes>
       <class name="test.loacationAndLoginTest">
         <methods>
-          <include name="fetchOTPFromDBTest"/>
           <include name="launchBrowser"/>
+          <include name="prescriptionDetailsTest"/>
         </methods>
       </class> <!-- test.loacationAndLoginTest -->
     </classes>

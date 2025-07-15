@@ -34,7 +34,6 @@ public class loacationAndLoginTest extends MartLocationandLoginPage {
 	void fetchOTPFromDBTest() {
 		System.out.println("\n fetchOTPFromDB Test");
 		fetchOTPFromDB();
-		otp = fetchOTPFromDB();
 		System.out.println("OTP fetched: " + otp);
 		// Assert.assertNotNull(otp, "OTP should not be null");
 	}
