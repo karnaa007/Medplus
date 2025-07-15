@@ -9,7 +9,7 @@
 					<include name="locationTest" />
 					<include name="loginTest" />
 					<include name="fetchOTPFromDBTest" />
-					<exclude name="searchAndAddProductTest" />
+					<include name="searchAndAddProductTest" />
 					<include name="miniCartTest" />
 					<include name="proceedToCheckoutTest" />
 					<include name="selectPatientTest" />
