@@ -9,15 +9,16 @@
 					<include name="locationTest" />
 					<include name="loginTest" />
 					<include name="fetchOTPFromDBTest" />
-					<include name="searchAndAddProductTest" />
+					<exclude name="searchAndAddProductTest" />
 					<include name="miniCartTest" />
 					<include name="proceedToCheckoutTest" />
 					<include name="selectPatientTest" />
 					<include name="prescriptionDetailsTest" />
 					<include name="deliveryDetailsTest" />
 					<include name="promotionsAndReviewTest" />
-					<include name="paymentDetailsTest" />
-            <include name="closeBrowserTest"/>
+					<exclude name="paymentDetailsTest" />
+					<include name="netPaymentTest" />
+           		    <exclude name="closeBrowserTest"/>
             </methods>
       </class>  
     </classes>

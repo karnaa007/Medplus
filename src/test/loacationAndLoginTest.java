@@ -94,11 +94,18 @@ public class loacationAndLoginTest extends MartLocationandLoginPage {
 		System.out.println("paymentDetails Test Completed");
 	}
 	
+	@Test
+	void netPaymentTest() throws InterruptedException {
+		System.out.println("\n netPayment Test");
+		netPayment();
+		System.out.println("orderConfirmation Test Completed");
+	}
+	
 	
 	@Test
 	public void closeBrowserTest() {
 		System.out.println("\n closeBrowser Test");
 		closeBrowser();
-		System.out.println("Browser closed successfully");
+		System.out.println("closeBrowserTest closed successfully");
 	}
 }

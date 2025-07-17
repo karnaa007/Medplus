@@ -26,6 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import base.BaseTest;
+import io.netty.util.internal.chmv8.ConcurrentHashMapV8.Action;
 
 public class MartLocationandLoginPage extends BaseTest {
 	public String mobileNo = "9951994998";
@@ -432,6 +433,7 @@ public class MartLocationandLoginPage extends BaseTest {
 				System.out.println("Promotions and Review is available");
 				// Click on the promotions and review
 				promotionsAndReviewProceedBtn.click();
+				Thread.sleep(3000);
 				System.out.println("Clicked on Promotions and Review");
 			} else {
 				System.out.println("Promotions and Review is not available");
@@ -479,6 +481,76 @@ public class MartLocationandLoginPage extends BaseTest {
 			System.out.println("No alert found: " + e.getMessage());
 		}
 	}
+	
+	public static void netPayment() throws InterruptedException {
+		try {
+			System.out.println("Net Payment Method" + driver.getTitle());
+			
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='app']/div/main/div/div/section/div[2]/ul/li[3]/div/div/button")));
+			WebElement netPaymentBtn = driver.findElement(By.xpath("//div[@id='app']/div/main/div/div/section/div[2]/ul/li[3]/div/div/button"));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(netPaymentBtn).perform();
+			System.out.println("Net Payment Button Found: " + netPaymentBtn.isDisplayed() + " and " + netPaymentBtn.isEnabled());
+			if (netPaymentBtn.isDisplayed() || netPaymentBtn.isEnabled()) {
+				netPaymentBtn.click();
+				Thread.sleep(3000);
+				System.out.println("Clicked on Net Payment Button");
+			} else {
+				System.out.println("Net Payment Button is not available");
+				Assert.fail("Net Payment Button is not available on the page");
+			}
+			// Wait for the SBI Bank Payment option to be present
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SBIB")));
+			WebElement sbiBankPayment = driver.findElement(By.id("SBIB"));
+			System.out.println("SBI Bank Payment Option Found 1: " + sbiBankPayment.isDisplayed() + " and " + sbiBankPayment.getText());
+			Thread.sleep(2000);
+			Actions action = new Actions(driver);
+			action.moveToElement(sbiBankPayment).click().perform();
+			System.out.println("SBI Bank Payment Option Found 2: " + sbiBankPayment.isDisplayed() + " and " + sbiBankPayment.getText());
+		if (sbiBankPayment.isDisplayed() || sbiBankPayment.getText().contains("SBI Bank")) {
+			sbiBankPayment.click();
+			Thread.sleep(3000);
+			System.out.println("Clicked on SBI Bank Payment Option");
+		} else {
+			System.out.println("SBI Bank Payment Option is not available");
+			Assert.fail("SBI Bank Payment Option is not available on the page");
+			
+		}
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='app']/div/main/div/div/section/div/div[4]/button[2]")));
+			WebElement paymentBtn = driver.findElement(By.xpath("//div[@id='app']/div/main/div/div/section/div/div[4]/button[2]"));
+			System.out.println("Place Order Button Found: " + paymentBtn.isDisplayed() + " and " + paymentBtn.isEnabled());
+			if (paymentBtn.isDisplayed() || paymentBtn.isEnabled()) {
+				paymentBtn.click();
+				Thread.sleep(3000);
+				System.out.println("Clicked on Place Order Button");
+			} else {
+				System.out.println("Place Order Button is not available");
+				Assert.fail("Place Order Button is not available on the page");
+			}
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='btn btnd']")));
+			WebElement successBtn = driver.findElement(By.xpath("//button[@class='btn btnd']"));
+			System.out.println("Order Placed Success Message Found: " + successBtn.isDisplayed() + " and " + successBtn.getText());
+			Assert.assertTrue(successBtn.isDisplayed(), "Order placed Success message is not displayed");
+			System.out.println("Order placed successfully");
+			successBtn.click();
+			Thread.sleep(3000);
+			System.out.println("Clicked on Success Button");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@class='toggle-arrow ']")));
+			WebElement toggleArrow = driver.findElement(By.xpath("//a[@class='toggle-arrow ']"));
+			System.out.println("OrderId Found: " + toggleArrow.isDisplayed() + " and " + toggleArrow.getText());
+			Assert.assertTrue(toggleArrow.isDisplayed(), "OrderId is not displayed");
+			System.out.println("OrderId is displayed: " + toggleArrow.getText());
+			
+		} catch (NoSuchElementException e) {
+			System.out.println("SBI Bank Payment Option not found: " + e.getMessage());
+			Assert.fail("Order placed message not found");
+		}
+	}
+	
+	
 
 	public void closeBrowser() {
 		if (driver != null) {
